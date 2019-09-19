@@ -1,13 +1,17 @@
 package com.albert.themedemo
 
-import android.annotation.TargetApi
+import android.graphics.Color
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import androidx.annotation.RequiresApi
 
-@RequiresApi(Build.VERSION_CODES.KITKAT)
+/**
+ * FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS
+ */
+@RequiresApi(Build.VERSION_CODES.LOLLIPOP)
 class FullScreenFrom44Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +42,12 @@ class FullScreenFrom44Activity : AppCompatActivity() {
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION ) or (
                 View.SYSTEM_UI_FLAG_FULLSCREEN ) or (
                 View.SYSTEM_UI_FLAG_IMMERSIVE )
+
+        // Translucent status bar
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.statusBarColor = Color.TRANSPARENT
+
         window.decorView.systemUiVisibility = visibleFlag
     }
 
