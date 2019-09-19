@@ -34,14 +34,14 @@ class MainActivity : AppCompatActivity() {
         listView.onItemClickListener = OnItemClickListener { parent, view, position, id ->
             val intent = Intent()
             when (position) {
+                0 -> {
+                    intent.setClass(baseContext, FullScreenPre44Activity::class.java)
+                }
                 1 -> {
-                    intent.setClass(this, FullScreenPre44Activity::class.java)
+                    intent.setClass(baseContext, FullScreenPre44UIFlagActivity::class.java)
                 }
                 2 -> {
-                    intent.setClass(this, FullScreenPre44UIFlagActivity::class.java)
-                }
-                3 -> {
-                    intent.setClass(this, FullScreenFrom44Activity::class.java)
+                    intent.setClass(baseContext, FullScreenFrom44Activity::class.java)
                 }
             }
 
