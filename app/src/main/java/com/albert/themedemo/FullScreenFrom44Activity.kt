@@ -17,6 +17,13 @@ class FullScreenFrom44Activity : AppCompatActivity() {
     }
 
     private fun initView() {
+        val controlView = findViewById<View>(R.id.control_view)
+        window.decorView.setOnSystemUiVisibilityChangeListener { flags:Int ->
+            var isVisible = (flags and View.SYSTEM_UI_FLAG_HIDE_NAVIGATION) == 0
+            controlView.visibility = if (isVisible) View.VISIBLE else View.GONE
+        }
+
+
         findViewById<View>(R.id.show_system_ui_btn).setOnClickListener { showSystemUi() }
         findViewById<View>(R.id.hide_system_ui_btn).setOnClickListener { hideSystemUi() }
 
