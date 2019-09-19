@@ -26,6 +26,9 @@
         <activity android:name=".FullScreenFrom44Activity">
         </activity>
 
+        <activity android:name=".ForHuaWeiActivity">
+        </activity>
+
     </application>
 
 </manifest>

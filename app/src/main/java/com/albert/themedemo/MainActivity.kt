@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
                 "FullScreen Before 4.4 - WindowManager",
                 "FullScreen Before 4.4 - UI flag",
                 "FullScreen From 4.4 - Immersive",
-                ""
+                "For huawei p20, status bar"
             )
         )
 
@@ -42,6 +42,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 2 -> {
                     intent.setClass(baseContext, FullScreenFrom44Activity::class.java)
+                }
+                3 -> {
+                    intent.setClass(baseContext, ForHuaWeiActivity::class.java)
                 }
             }
 
